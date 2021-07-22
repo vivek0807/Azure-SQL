@@ -39,4 +39,11 @@ create procedure datacheck
 
 select * from tester;
 
-select * from Production.Product;
+select * from Production.productcosthistory;
+select * from Production.productlistpricehistory
+
+delete  Production.productlistpricehistory from Production.productlistpricehistory
+inner join Production.productcosthistory on
+Production.productcosthistory.productid=Production.productlistpricehistory.productid
+
+
