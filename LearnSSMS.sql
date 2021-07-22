@@ -10,3 +10,4 @@ select count(*) from INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' a
 
 select * from Production.Product;
 select count(*) from Production.Product;
+
