@@ -39,4 +39,23 @@ create procedure datacheck
 
 select * from tester;
 
-select * from Production.Product;
+select * from Production.productcosthistory;
+select * from Production.productlistpricehistory
+
+delete  Production.productlistpricehistory from Production.productlistpricehistory
+inner join Production.productcosthistory on
+Production.productcosthistory.productid=Production.productlistpricehistory.productid
+
+
+
+select * from Sales.shoppingcartitem;
+select * into Sales.sh_bkp from Sales.shoppingcartitem;
+
+select * from Production.productreview;
+select * from Sales.sh_bkp;
+
+select * from INFORMATION_SCHEMA.TABLES where TABLE_TYPE='BASE TABLE' and TABLE_NAME='productreview'
+
+delete Sales.shoppingcartitem from Sales.shoppingcartitem
+inner join Production.Productreview
+on Sales.shoppingcartitem.productid=Production.productreview.productid;
