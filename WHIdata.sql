@@ -51,6 +51,9 @@ delete po from dbo.vw_fact_orders po
     inner join staging.vw_fact_orders so
     on po.order_dt=so.order_dt
 
+delete from dbo.vw_fact_orders po
+where po.order_dt in
+(select distinct so.order_dt from staging.vw_fact_orders so) -- new query
 
 truncate table dbo.vw_dim_store
 truncate table dbo.vw_dim_product
