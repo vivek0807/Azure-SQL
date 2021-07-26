@@ -86,3 +86,8 @@ select top(100)* from dbo.whi_data;
 
 delete from dbo.vw_fact_orders where dbo.vw_fact_orders.order_dt in
 (select distinct so.order_dt from staging.vw_fact_orders so)
+------------------------------------------------------------------
+truncate table dbo.vw_fact_orders;
+select count(*) from staging.vw_fact_orders;
+delete from dbo.vw_fact_orders where dbo.vw_fact_orders.order_dt in
+(select distinct so.order_dt from staging.vw_fact_orders so)
