@@ -59,3 +59,8 @@ select * from INFORMATION_SCHEMA.TABLES where TABLE_TYPE='BASE TABLE' and TABLE_
 delete Sales.shoppingcartitem from Sales.shoppingcartitem
 inner join Production.Productreview
 on Sales.shoppingcartitem.productid=Production.productreview.productid;
+
+select top(100)* from Production.BillOfMaterials where BillOfMaterialsID=45489;
+
+
+
