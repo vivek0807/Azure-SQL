@@ -16,7 +16,7 @@ truncate table staging.MV_Output_Advance_StateTrans
 --------------------------------------------------------------------------
 
 
-select count(*) from dbo.MV_Output_Advance_July_2020_Dec_2020_PrizmTrans;
+select count(*) from dbo.MV_Output_Advance_July_2020_Dec_2020_PrizmTrans;--85021
 select count(*) from staging.MV_Output_Advance_PrizmTrans;--34686
 select top(100)* from dbo.MV_Output_Advance_July_2020_Dec_2020_PrizmTrans;
 
@@ -33,7 +33,7 @@ and st.CohortEndPeriod=pt.CohortEndPeriod and st.SpendMonth=pt.SpendMonth; --0
 select count(*) from staging.MV_Output_Advance_StateTrans;--37293
 select count(*) from dbo.MV_Output_Advance_July_2020_Dec_2020_StateTrans;--36521+37293=73814
 
-select count(*) from dbo.MV_Output_Advance_July_2020_Dec_2020_StateTrans pt
+select count(*) from dbo.MV_Output_Advance_July_2020_Dec_2020_StateTrans --73814
 
 delete st from dbo.MV_Output_Advance_July_2020_Dec_2020_StateTrans st where
 st.CohortName+st.CohortStartPeriod+st.CohortEndPeriod+st.SpendMonth in
