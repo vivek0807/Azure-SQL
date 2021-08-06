@@ -14,16 +14,18 @@ select top(100)* from staging.MV_Output_Advance_StateTrans;
 truncate table staging.MV_Output_Advance_PrizmTrans;
 truncate table staging.MV_Output_Advance_StateTrans
 --------------------------------------------------------------------------
-delete pt from dbo.MV_Output_Advance_July_2020_Dec_2020_PrizmTrans pt
-inner join staging.MV_Output_Advance_PrizmTrans st
-on st.CohortName=pt.CohortName and st.CohortStartPeriod=pt.CohortStartPeriod
-and st.CohortEndPeriod=pt.CohortEndPeriod and st.SpendMonth=pt.SpendMonth; --0
 
-select count(*) from dbo.MV_Output_Advance_July_2020_Dec_2020_PrizmTrans;
-select count(*) from staging.MV_Output_Advance_PrizmTrans;
+
+select count(*) from dbo.MV_Output_Advance_July_2020_Dec_2020_PrizmTrans;--85021
+select count(*) from staging.MV_Output_Advance_PrizmTrans;--34686
+select top(100)* from dbo.MV_Output_Advance_July_2020_Dec_2020_PrizmTrans;
+
+delete st from dbo.MV_Output_Advance_July_2020_Dec_2020_PrizmTrans st where
+st.CohortName+st.CohortStartPeriod+st.CohortEndPeriod+st.SpendMonth in
+(select pt.CohortName+pt.CohortStartPeriod+pt.CohortEndPeriod+pt.SpendMonth from staging.MV_Output_Advance_PrizmTrans pt)
 ---------------------------------------------------------------------------
 
-select count(*) from dbo.MV_Output_Advance_July_2020_Dec_2020_StateTrans pt
+select top(100)* from dbo.MV_Output_Advance_July_2020_Dec_2020_StateTrans pt
 inner join staging.MV_Output_Advance_StateTrans st
 on st.CohortName=pt.CohortName and st.CohortStartPeriod=pt.CohortStartPeriod
 and st.CohortEndPeriod=pt.CohortEndPeriod and st.SpendMonth=pt.SpendMonth; --0
@@ -31,6 +33,9 @@ and st.CohortEndPeriod=pt.CohortEndPeriod and st.SpendMonth=pt.SpendMonth; --0
 select count(*) from staging.MV_Output_Advance_StateTrans;--37293
 select count(*) from dbo.MV_Output_Advance_July_2020_Dec_2020_StateTrans;--36521+37293=73814
 
-select count(*) from dbo.MV_Output_Advance_July_2020_Dec_2020_StateTrans pt
+select count(*) from dbo.MV_Output_Advance_July_2020_Dec_2020_StateTrans --73814
 
-select pt.CohortName+pt.CohortStartPeriod+pt.CohortEndPeriod+pt.SpendMonth from dbo.MV_Output_Advance_July_2020_Dec_2020_StateTrans pt;
+delete st from dbo.MV_Output_Advance_July_2020_Dec_2020_StateTrans st where
+st.CohortName+st.CohortStartPeriod+st.CohortEndPeriod+st.SpendMonth in
+(select pt.CohortName+pt.CohortStartPeriod+pt.CohortEndPeriod+pt.SpendMonth from staging.MV_Output_Advance_StateTrans pt)
+
