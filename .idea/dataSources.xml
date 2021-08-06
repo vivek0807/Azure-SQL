@@ -19,5 +19,11 @@
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
       <jdbc-url>jdbc:sqlserver://merchantsql.database.windows.net:1433;database=merchantdashboard</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="cvn-dvh" uuid="c1b17593-7bf8-4040-b115-6d10eb8b6167">
+      <driver-ref>azure.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://advworks-dwss.database.windows.net:1433;database=cvn-dwh</jdbc-url>
+    </data-source>
   </component>
 </project>

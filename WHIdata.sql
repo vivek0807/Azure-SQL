@@ -94,12 +94,15 @@ select top(100)* from dbo.whi_data;
 delete from dbo.vw_fact_orders where dbo.vw_fact_orders.order_dt in
 (select distinct so.order_dt from staging.vw_fact_orders so)
 ------------------------------------------------------------------
+select top (100)* from staging.vw_fact_orders;
+select top(100)* from dbo.vw_fact_orders;
 truncate table dbo.vw_fact_orders;
 truncate table staging.vw_fact_orders;
 select count(*) from staging.vw_fact_orders with (nolock );--1108512175
 select count(*) from dbo.vw_fact_orders with (nolock );    --887748343
 delete from dbo.vw_fact_orders where dbo.vw_fact_orders.order_dt in
 (select distinct so.order_dt from staging.vw_fact_orders so)
+
 
 ----------------------------------------------------
 select * from staging.whi_data where rowid='8LX|9046705170NULLNULLJun 15 2021  8:42PM'
@@ -124,10 +127,21 @@ select distinct (customer_id)from staging.vw_dim_customer where customer_id='184
 
 select count(distinct customer_id) from staging.vw_dim_customer; --2262129
 
+
+
 truncate table dbo.vw_dim_customer;
 
 select * from staging.vw_dim_customer where customer_id ='1846027674'
 
+create table checker1(
+    today datetime
+)
 
 
+drop table checker1;
 
+select * from staging.vw_dim_customer_adf;
+truncate table dbo.vw_dim_customer;
+select * from staging.vw_dim_customer_adf where cq_customer_id='COL.2428232'
+
+    select count(distinct cq_customer_id) from staging.vw_dim_customer_adf
