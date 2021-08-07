@@ -126,6 +126,8 @@ select count(distinct customer_id) from staging.vw_dim_customer; --2262129
 
 truncate table dbo.vw_dim_customer;
 
+select top (100)* from dbo.vw_dim_customer;
+
 select * from staging.vw_dim_customer where customer_id ='1846027674'
 
 

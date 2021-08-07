@@ -63,4 +63,31 @@ on Sales.shoppingcartitem.productid=Production.productreview.productid;
 select top(100)* from Production.BillOfMaterials where BillOfMaterialsID=45489;
 
 
+set rowcount 0
+select * from Person.Password  ;
+
+select newid();
+
+
+create table Equities(
+    id int identity (1,1),
+    scrip varchar(max),
+    entryprice decimal,
+    exitprice decimal,
+    Holding char default 'N',
+    startdate date  default current_timestamp,
+    enddate date default '2099/12/31',
+
+)
+
+update dbo.Equities set Holding='y' where scrip='zomato'
+select * from Equities;
+
+    insert into dbo.Equities (scrip, entryprice, exitprice) values ('CDSL',1287,1355)
+    insert into dbo.Equities (scrip, entryprice, exitprice) values ('Zomato',75,130)
+    insert into dbo.Equities (scrip, entryprice, exitprice) values ('Tata Steel',1400,1200)
+    insert into dbo.Equities (scrip, entryprice, exitprice) values ('Indalco',130,150)
+    insert into dbo.Equities (scrip, entryprice, exitprice) values ('Persistent',3000,3017)
+    update dbo.Equities  set Holding='Y',enddate='2021/08/01' where id=1
+
 
