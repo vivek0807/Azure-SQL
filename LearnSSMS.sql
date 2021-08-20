@@ -91,3 +91,7 @@ select * from Equities;
     update dbo.Equities  set Holding='Y',enddate='2021/08/01' where id=1
 
 
+
+
+DELIMITER
+/*https://docs.microsoft.com/en-us/azure/data-factory/data-flow-surrogate-key*/
