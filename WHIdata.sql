@@ -138,9 +138,11 @@ create table checker1(
 )
 
 
+
 drop table checker1;
 
-select * from staging.vw_dim_customer_adf;
+select customer_id,count(*) from staging.vw_dim_customer_adf where customer_id=6369036674 group by (customer_id);
+select * from staging.vw_dim_customer_adf where customer_id is null;
 truncate table dbo.vw_dim_customer;
 select * from staging.vw_dim_customer_adf where cq_customer_id='COL.2428232'
 

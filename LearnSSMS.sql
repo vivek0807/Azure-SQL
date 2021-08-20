@@ -63,16 +63,8 @@ on Sales.shoppingcartitem.productid=Production.productreview.productid;
 select top(100)* from Production.BillOfMaterials where BillOfMaterialsID=45489;
 
 
-DELIMITER //
-CREATE TRIGGER ai_trigger_name AFTER INSERT ON posts
-FOR EACH ROW
-BEGIN
 
-    UPDATE posts
-       SET gen_id = (SELECT MAX(gen_id) FROM posts) + 1
-     WHERE post_id = LAST_INSERT_ID()
-     LIMIT 1;
 
-END;//
+
 DELIMITER
 /*https://docs.microsoft.com/en-us/azure/data-factory/data-flow-surrogate-key*/
