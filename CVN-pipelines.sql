@@ -29,7 +29,7 @@ SELECT [person_id]
 ,[per_phn_phone_number]
 FROM [staging].[person_phone]
 
-
+select * from staging.person_phone where person_id=2173320
 -- use this directly to map
 SELECT [person_id]
     ,[per_addr_type]
@@ -43,3 +43,5 @@ SELECT [person_id]
     ,[per_addr_zip]
 FROM [staging].[person_address]
 where per_addr_type = 'Home'
+
+select [person id] from staging.person;
