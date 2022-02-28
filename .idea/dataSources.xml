@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="test@myexplore.database.windows.net" uuid="f802be6a-880b-48db-9955-87f8413b4b03">
-      <driver-ref>azure.ms</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
-      <jdbc-url>jdbc:sqlserver://myexplore.database.windows.net:1433;database=test</jdbc-url>
-    </data-source>
     <data-source source="LOCAL" name="WhiData" uuid="2de74571-0181-46a7-8a88-a65753e877f8">
       <driver-ref>azure.ms</driver-ref>
       <synchronize>true</synchronize>
@@ -24,6 +18,13 @@
       <synchronize>true</synchronize>
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
       <jdbc-url>jdbc:sqlserver://advworks-dwss.database.windows.net:1433;database=cvn-dwh</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Test@myexplore.database.windows.net" uuid="66889173-ca81-4774-af80-2c05d1bee693">
+      <driver-ref>azure.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://myexplore.database.windows.net:1433;database=Test</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
 </project>

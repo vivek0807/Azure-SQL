@@ -38,7 +38,7 @@ create TABLE kaw_metadata(
 
 create table kaw_delete(
                            tablename varchar(30),
-                           numbers numeric,
+                           numbers numeric,bb
                            deleted varchar(2) default 'N',
                            delete_dt_tm datetime
 )
